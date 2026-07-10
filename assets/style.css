@@ -1,24 +1,21 @@
 /* ==========================================================================
    Isti Marta Sukma — personal site
-   Design: "Diffusion" — dark ink field, warm paper content, network motif
+   Design: single flat paper field, classic serif display, brick-red accent,
+   diffusion-network motif re-tuned for a light ground
    ========================================================================== */
 
-@import url('https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,500&family=Public+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,500;1,600&family=Public+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap');
 
 :root{
-  --ink: #10141d;
-  --ink-soft: #161c28;
-  --ink-line: rgba(231,228,218,0.14);
-  --paper: #eeece3;
-  --paper-raised: #f7f5ee;
-  --text-light: #e8e5da;
-  --text-light-dim: #a9aa9f;
-  --text-dark: #1a1d16;
-  --text-dark-dim: #5c5f52;
-  --teal: #4fa39c;
-  --teal-dim: #3a7a75;
-  --brass: #c39a4b;
-  --rule: rgba(26,29,22,0.14);
+  --ink: #1c1712;
+  --paper: #fdfcfa;
+  --paper-raised: #fdfcfa;
+  --text-dark: #1c1712;
+  --text-dark-dim: #6b665e;
+  --maroon: #8a2a1a;
+  --maroon-dim: #6b2013;
+  --brass: #b5551f;
+  --rule: rgba(28,23,18,0.13);
   --radius: 2px;
   --max: 1080px;
 }
@@ -50,13 +47,15 @@ body{
 }
 
 h1, h2, h3, h4{
-  font-family: 'Fraunces', Georgia, serif;
+  font-family: 'Lora', Georgia, serif;
   font-weight: 500;
-  line-height: 1.12;
+  line-height: 1.15;
   margin: 0;
-  letter-spacing: -0.01em;
+  letter-spacing: -0.005em;
   color: var(--text-dark);
 }
+
+h1 em, h2 em, h3 em{ font-style: italic; }
 
 a{ color: inherit; text-decoration: none; }
 
@@ -65,10 +64,10 @@ a{ color: inherit; text-decoration: none; }
   font-size: 0.72rem;
   letter-spacing: 0.14em;
   text-transform: uppercase;
-  color: var(--teal-dim);
+  color: var(--maroon-dim);
 }
 
-.eyebrow.on-dark{ color: var(--teal); }
+.eyebrow.on-dark{ color: var(--maroon); }
 
 img{ max-width: 100%; display: block; }
 
@@ -84,9 +83,9 @@ img{ max-width: 100%; display: block; }
   position: sticky;
   top: 0;
   z-index: 40;
-  background: rgba(16,20,29,0.92);
+  background: rgba(253,252,250,0.92);
   backdrop-filter: blur(10px);
-  border-bottom: 1px solid var(--ink-line);
+  border-bottom: 1px solid var(--rule);
 }
 
 .header-inner{
@@ -100,15 +99,15 @@ img{ max-width: 100%; display: block; }
 }
 
 .brand{
-  font-family: 'Fraunces', serif;
+  font-family: 'Lora', serif;
   font-size: 1.05rem;
-  color: var(--text-light);
+  color: var(--text-dark);
   font-weight: 600;
   letter-spacing: -0.01em;
   white-space: nowrap;
 }
 
-.brand span{ color: var(--teal); }
+.brand span{ font-style: italic; color: var(--maroon); }
 
 nav.main-nav{
   display: flex;
@@ -122,7 +121,7 @@ nav.main-nav a{
   font-size: 0.7rem;
   letter-spacing: 0.08em;
   text-transform: uppercase;
-  color: var(--text-light-dim);
+  color: var(--text-dark-dim);
   padding: 4px 0;
   border-bottom: 1px solid transparent;
   transition: color 0.15s ease, border-color 0.15s ease;
@@ -130,15 +129,15 @@ nav.main-nav a{
 
 nav.main-nav a:hover,
 nav.main-nav a.active{
-  color: var(--text-light);
-  border-bottom-color: var(--teal);
+  color: var(--text-dark);
+  border-bottom-color: var(--maroon);
 }
 
 .nav-toggle{
   display: none;
   background: none;
-  border: 1px solid var(--ink-line);
-  color: var(--text-light);
+  border: 1px solid var(--rule);
+  color: var(--text-dark);
   font-family: 'JetBrains Mono', monospace;
   font-size: 0.7rem;
   letter-spacing: 0.08em;
@@ -165,10 +164,11 @@ nav.main-nav a.active{
 
 .hero{
   position: relative;
-  background: var(--ink);
-  color: var(--text-light);
+  background: var(--paper);
+  color: var(--text-dark);
   overflow: hidden;
   padding: 88px 0 76px;
+  border-bottom: 1px solid var(--rule);
 }
 
 .hero .wrap{
@@ -183,20 +183,20 @@ nav.main-nav a.active{
 .hero-net{
   position: absolute;
   inset: 0;
-  opacity: 0.55;
+  opacity: 0.9;
   z-index: 1;
 }
 
 .hero h1{
   font-size: clamp(2.4rem, 5vw, 3.6rem);
-  color: var(--text-light);
+  color: var(--text-dark);
   margin: 14px 0 18px;
 }
 
 .hero p.lede{
   max-width: 46ch;
   font-size: 1.08rem;
-  color: var(--text-light-dim);
+  color: var(--text-dark-dim);
 }
 
 .hero-links{
@@ -211,19 +211,19 @@ nav.main-nav a.active{
   font-size: 0.72rem;
   letter-spacing: 0.06em;
   text-transform: uppercase;
-  color: var(--teal);
-  border-bottom: 1px solid var(--teal-dim);
+  color: var(--maroon);
+  border-bottom: 1px solid var(--maroon-dim);
   padding-bottom: 3px;
 }
 
-.hero-links a:hover{ color: var(--text-light); border-color: var(--text-light); }
+.hero-links a:hover{ color: var(--text-dark); border-color: var(--text-dark); }
 
 .hero-figure{
   position: relative;
   z-index: 2;
-  border: 1px solid var(--ink-line);
+  border: 1px solid var(--rule);
   padding: 10px;
-  background: rgba(238,236,227,0.03);
+  background: rgba(28,23,18,0.02);
 }
 
 .hero-figure img{ width: 100%; height: auto; filter: grayscale(0.15) contrast(1.03); }
@@ -231,7 +231,7 @@ nav.main-nav a.active{
   font-family: 'JetBrains Mono', monospace;
   font-size: 0.68rem;
   letter-spacing: 0.06em;
-  color: var(--text-light-dim);
+  color: var(--text-dark-dim);
   padding: 10px 4px 2px;
 }
 
@@ -243,17 +243,18 @@ nav.main-nav a.active{
 /* -------------------------------------------------------------- sections */
 
 .page-hero{
-  background: var(--ink);
-  color: var(--text-light);
+  background: var(--paper);
+  color: var(--text-dark);
   padding: 64px 0 52px;
   position: relative;
   overflow: hidden;
+  border-bottom: 1px solid var(--rule);
 }
 
 .page-hero .wrap{ position: relative; z-index: 2; }
 
-.page-hero h1{ color: var(--text-light); font-size: clamp(2rem, 4vw, 2.7rem); margin-top: 10px; }
-.page-hero p.dek{ color: var(--text-light-dim); max-width: 58ch; margin-top: 14px; font-size: 1.02rem; }
+.page-hero h1{ color: var(--text-dark); font-size: clamp(2rem, 4vw, 2.7rem); margin-top: 10px; }
+.page-hero p.dek{ color: var(--text-dark-dim); max-width: 58ch; margin-top: 14px; font-size: 1.02rem; }
 
 section{
   padding: 64px 0;
@@ -307,7 +308,7 @@ section:last-of-type{ border-bottom: none; }
 .entry .year{
   font-family: 'JetBrains Mono', monospace;
   font-size: 0.85rem;
-  color: var(--teal-dim);
+  color: var(--maroon-dim);
   padding-top: 2px;
 }
 
@@ -317,7 +318,7 @@ section:last-of-type{ border-bottom: none; }
   font-size: 0.68rem;
   letter-spacing: 0.06em;
   text-transform: uppercase;
-  color: var(--teal-dim);
+  color: var(--maroon-dim);
   display: inline-block;
   margin-bottom: 8px;
 }
@@ -325,8 +326,8 @@ section:last-of-type{ border-bottom: none; }
 .entry a.src{
   font-family: 'JetBrains Mono', monospace;
   font-size: 0.72rem;
-  border-bottom: 1px solid var(--teal-dim);
-  color: var(--teal-dim);
+  border-bottom: 1px solid var(--maroon-dim);
+  color: var(--maroon-dim);
 }
 .entry a.src:hover{ color: var(--text-dark); border-color: var(--text-dark); }
 
@@ -399,20 +400,21 @@ ul.plain li strong{ color: var(--text-dark); }
 /* ------------------------------------------------------------------ cta */
 
 .callout{
-  background: var(--ink);
-  color: var(--text-light);
+  background: var(--paper);
+  color: var(--text-dark);
   padding: 22px 26px;
-  border-left: 3px solid var(--teal);
+  border: 1px solid var(--maroon);
 }
-.callout p{ margin: 0; color: var(--text-light-dim); }
-.callout a{ color: var(--teal); border-bottom: 1px solid var(--teal-dim); }
+.callout p{ margin: 0; color: var(--text-dark-dim); }
+.callout a{ color: var(--maroon); border-bottom: 1px solid var(--maroon-dim); }
 
 /* --------------------------------------------------------------- footer */
 
 footer{
-  background: var(--ink);
-  color: var(--text-light-dim);
+  background: var(--paper);
+  color: var(--text-dark-dim);
   padding: 46px 0 34px;
+  border-top: 1px solid var(--rule);
 }
 footer .wrap{
   display: flex;
@@ -422,8 +424,8 @@ footer .wrap{
   gap: 16px;
 }
 footer .foot-brand{
-  font-family: 'Fraunces', serif;
-  color: var(--text-light);
+  font-family: 'Lora', serif;
+  color: var(--text-dark);
   font-size: 1rem;
 }
 footer .foot-links{
@@ -436,14 +438,14 @@ footer .foot-links a{
   font-size: 0.7rem;
   letter-spacing: 0.06em;
   text-transform: uppercase;
-  color: var(--text-light-dim);
+  color: var(--text-dark-dim);
 }
-footer .foot-links a:hover{ color: var(--teal); }
+footer .foot-links a:hover{ color: var(--maroon); }
 footer .foot-meta{
   font-family: 'JetBrains Mono', monospace;
   font-size: 0.66rem;
-  color: var(--text-light-dim);
-  opacity: 0.6;
+  color: var(--text-dark-dim);
+  opacity: 0.75;
   margin-top: 22px;
 }
 
@@ -460,7 +462,7 @@ footer .foot-meta{
   background: var(--paper-raised);
 }
 .location-card .eyebrow{ margin-bottom: 8px; }
-.location-card a{ border-bottom: 1px solid var(--teal-dim); color: var(--teal-dim); font-size: 0.85rem; }
+.location-card a{ border-bottom: 1px solid var(--maroon-dim); color: var(--maroon-dim); font-size: 0.85rem; }
 @media (max-width: 620px){ .locations{ grid-template-columns: 1fr; } }
 
 .contact-form{
@@ -491,14 +493,14 @@ footer .foot-meta{
 }
 .contact-form input:focus,
 .contact-form textarea:focus{
-  outline: 2px solid var(--teal);
+  outline: 2px solid var(--maroon);
   outline-offset: 1px;
 }
 .contact-form button{
   justify-self: start;
-  background: var(--ink);
-  color: var(--text-light);
-  border: none;
+  background: transparent;
+  color: var(--maroon);
+  border: 1px solid var(--maroon);
   padding: 12px 26px;
   font-family: 'JetBrains Mono', monospace;
   font-size: 0.75rem;
@@ -506,12 +508,13 @@ footer .foot-meta{
   text-transform: uppercase;
   cursor: pointer;
   border-radius: var(--radius);
+  transition: background 0.15s ease, color 0.15s ease;
 }
-.contact-form button:hover{ background: var(--teal-dim); }
+.contact-form button:hover{ background: var(--maroon); color: var(--paper); }
 @media (max-width: 560px){ .contact-form .row-2{ grid-template-columns: 1fr; } }
 
 /* focus visibility */
 a:focus-visible, button:focus-visible{
-  outline: 2px solid var(--teal);
+  outline: 2px solid var(--maroon);
   outline-offset: 2px;
 }
