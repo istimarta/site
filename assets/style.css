@@ -48,12 +48,15 @@ body{
 
 h1, h2, h3, h4{
   font-family: 'Cormorant Garamond', Georgia, serif;
-  font-weight: 500;
+  font-weight: 600;
   line-height: 1.15;
   margin: 0;
   letter-spacing: -0.005em;
   color: var(--text-dark);
 }
+
+h3{ font-size: 1.35rem; }
+h4{ font-size: 1.15rem; }
 
 h1 em, h2 em, h3 em{ font-style: italic; }
 
@@ -312,7 +315,7 @@ section:last-of-type{ border-bottom: none; }
   padding-top: 2px;
 }
 
-.entry h3{ font-size: 1.18rem; margin-bottom: 6px; }
+.entry h3{ font-size: 1.4rem; margin-bottom: 6px; }
 .entry .tag{
   font-family: 'JetBrains Mono', monospace;
   font-size: 0.68rem;
