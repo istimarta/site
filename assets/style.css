@@ -17,7 +17,7 @@
   --brass: #b5551f;
   --rule: rgba(28,23,18,0.13);
   --radius: 2px;
-  --max: 1080px;
+  --max: 1320px;
 }
 
 *, *::before, *::after{ box-sizing: border-box; }
