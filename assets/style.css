@@ -17,7 +17,7 @@
   --brass: #b5551f;
   --rule: rgba(28,23,18,0.13);
   --radius: 2px;
-  --max: 1320px;
+  --max: 1080px;
 }
 
 *, *::before, *::after{ box-sizing: border-box; }
@@ -40,23 +40,20 @@ body{
   margin: 0;
   background: var(--paper);
   color: var(--text-dark);
-  font-family: 'Cormorant Garamond', Georgia, serif;
-  font-size: 17px;
-  line-height: 1.7;
+  font-family: 'Public Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-size: 16px;
+  line-height: 1.6;
   -webkit-font-smoothing: antialiased;
 }
 
 h1, h2, h3, h4{
   font-family: 'Cormorant Garamond', Georgia, serif;
-  font-weight: 600;
+  font-weight: 500;
   line-height: 1.15;
   margin: 0;
   letter-spacing: -0.005em;
   color: var(--text-dark);
 }
-
-h3{ font-size: 1.35rem; }
-h4{ font-size: 1.15rem; }
 
 h1 em, h2 em, h3 em{ font-style: italic; }
 
@@ -315,7 +312,7 @@ section:last-of-type{ border-bottom: none; }
   padding-top: 2px;
 }
 
-.entry h3{ font-size: 1.4rem; margin-bottom: 6px; }
+.entry h3{ font-size: 1.18rem; margin-bottom: 6px; }
 .entry .tag{
   font-family: 'JetBrains Mono', monospace;
   font-size: 0.68rem;
